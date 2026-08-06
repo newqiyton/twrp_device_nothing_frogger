@@ -21,7 +21,7 @@ Display                 | 6.78" AMOLED, 120Hz (1224 × 2720 pixels)
 
 Recovery        | TWRP 14.0
 :---------------|:---------------------------
-Variant         | 6.6
+Variant         | 6.1
 Manifest        | https://github.com/nebrassy/platform_manifest_twrp_aosp.git
 
 
