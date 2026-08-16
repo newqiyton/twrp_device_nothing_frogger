@@ -11,7 +11,7 @@ on post-fs-data # we need to make sure that this runs after decryption
     wait /vendor/odm/etc/aac_richtap.config
     start vendor.vibrator
 
-service vendor.vibrator /vendor/bin/hw/android.hardware.vibrator.service.asteroids
+service vendor.vibrator /vendor/bin/hw/android.hardware.vibrator.service.frogger
     class late_start
     user system
     group system input
