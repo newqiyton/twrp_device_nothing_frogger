@@ -31,26 +31,24 @@ Manifest        | https://github.com/nebrassy/platform_manifest_twrp_aosp.git
 ## Checklist
 
 ### Functionality
-## Functionality wasnt tested yet
 
-- [ ] Installing and flashing images
-    - [ ] .zip files (experimental)
-    - [ ] .img files (working)
-- [ ] Backup and restore
-    - [ ] To external/removable devices (e.g. OTG device)
-- [ ] Built-in features work normally
-    - [ ] ADB
-        - [ ] Sideload
-    - [ ] FastbootD
-    - [ ] Screen and brightnesss
-    - [ ] Touchscreen
-    - [ ] Unmount
-    - [ ] MTP
-    - [ ] Filesystem/Mounts
-    - [ ] Slot switch
+- [?] Installing and flashing images
+    - [?] .zip files (experimental)
+    - [?] .img files (working)
+- [?] Backup and restore
+    - [?] To external/removable devices (e.g. OTG device)
+- [x] Built-in features work normally
+    - [x] ADB
+        - [?] Sideload
+    - [?] FastbootD
+    - [x] Screen and brightnesss
+    - [x] Touchscreen
+    - [x] MTP
+    - [x] Filesystem/Mounts
+    - [x] Slot switch
     - [ ] Haptics
 - [ ] Settings persistence
-- [ ] Data decryption
-    - [ ] Without a password
-    - [ ] With a password
+- [x] Data decryption
+    - [x] Without a password
+    - [x] With a password
 
