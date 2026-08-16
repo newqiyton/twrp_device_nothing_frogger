@@ -1,6 +1,9 @@
 #!/system/bin/sh
 
-DRIVERS="panel_event_notifier qts goodix_ts focaltech_fts hapticdrv qcom-hv-haptics"
+# Load touch drivers if they didn't load
+# Adapted from chickendrop89
+
+DRIVERS="focaltech_fts qts goodix_ts"
 MODULES_DIR="/lib/modules"
 
 for d in $DRIVERS; do
@@ -8,6 +11,7 @@ for d in $DRIVERS; do
   path=$(find "$MODULES_DIR" -name "$d.ko" | head -n 1)
   if [ -f "$path" ]; then
     insmod "$path"
-    echo "Force inserted module: $d" >>/tmp/modules.log
+    echo "Force inserted module: $d" >>/tmp/recovery.log
   fi
 done
+

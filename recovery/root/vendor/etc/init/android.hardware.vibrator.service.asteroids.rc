@@ -1,0 +1,23 @@
+# Copyright (C) 2025 The Android Open Source Project
+# Copyright (C) 2026 Ubuntuify
+# SPDX-License-Identifier: Apache-2.0
+
+on fs
+    wait /dev/aac_richtap
+    chown system system /dev/aac_richtap
+    chmod 0600 /dev/aac_richtap
+
+on post-fs-data # we need to make sure that this runs after decryption
+    wait /vendor/odm/etc/aac_richtap.config
+    start vendor.vibrator
+
+service vendor.vibrator /vendor/bin/hw/android.hardware.vibrator.service.asteroids
+    class late_start
+    user system
+    group system input
+    setenv RICHTAP_DEVICE_PATH /dev/aac_richtap
+    setenv ENV_RICHTAP_CONFIG_PATH /vendor/odm/etc/aac_richtap.config
+    seclabel u:r:recovery:s0
+    interface aidl android.hardware.vibrator.IVibrator/default
+    disabled
+

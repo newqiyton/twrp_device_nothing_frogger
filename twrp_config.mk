@@ -1,19 +1,10 @@
-# ------------------
-# TWRP Configuration
-# ------------------
-
-# Display
-TARGET_SCREEN_DENSITY := 440
-TARGET_SCREEN_HEIGHT := 2720
-TARGET_SCREEN_WIDTH := 1224
-
 # TWRP Configuration
 TW_THEME := portrait_hdpi
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_NO_INPUT_DEVICES := false
 TW_INPUT_BLACKLIST := "null"
 
-TW_MAX_BRIGHTNESS := 4000
+TW_MAX_BRIGHTNESS := 2048
 
 TW_DEFAULT_LANGUAGE     := en
 TW_USE_TOOLBOX          := true
@@ -27,12 +18,13 @@ TW_EXTRA_LANGUAGES      := true
 TW_EXCLUDE_APEX         := true
 TW_INCLUDE_FASTBOOTD    := true
 
-# Change clock position so camera wont close up the clock
-TW_CUSTOM_CLOCK_POS := "590"
+TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko rproc_qcom_common.ko q6_dlkm.ko qcom_q6v5.ko qcom_q6v5_pas.ko qcom_sysmon.ko focaltech_fts.ko hapticdrv.ko"
+TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
 
-# Battery
-TW_CUSTOM_BATTERY_PATH := "/sys/class/power_supply/battery"
-HEALTHD_USE_BATTERY_INFO := true
+# Haptics / Vibrations
+#TW_SUPPORT_INPUT_AIDL_HAPTICS := true
+#TW_SUPPORT_INPUT_AIDL_HAPTICS_FQNAME := "IVibrator/default"
+#TW_SUPPORT_INPUT_AIDL_HAPTICS_FIX_OFF := true
 
 # USB
 TW_EXCLUDE_DEFAULT_USB_INIT := true
@@ -43,8 +35,6 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     android.hidl.allocator@1.0 \
     android.hidl.memory@1.0 \
     android.hidl.memory.token@1.0 \
-    android.hardware.vibrator@1.0-impl \
-    android.hardware.vibrator@1.0-service\
     libdmabufheap \
     libhidlmemory \
     libhardware \
@@ -52,9 +42,7 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libnetutils \
     vendor.display.config@1.0 \
     vendor.display.config@2.0 \
-    android.hardware.vibrator-service.nothing\
     libdebuggerd_client
-
 TW_OVERRIDE_SYSTEM_PROPS := \
     "ro.build.product;ro.build.fingerprint=ro.vendor.build.fingerprint;ro.build.version.incremental"
 TW_OVERRIDE_PROPS_ADDITIONAL_PARTITIONS := vendor
@@ -69,18 +57,15 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libdebuggerd_client.so \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@1.0.so \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so
-
-# Custom refresh rate
+TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
 TW_FRAMERATE := 120
-
-# Include EDL mode
 TW_HAS_EDL_MODE := true
 
-# Encryption
-TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_CRYPTO_FBE := true
+# TWRP - Encryption / Decryption
+TW_INCLUDE_CRYPTO               := true
+TW_INCLUDE_CRYPTO_FBE           := true
 TW_INCLUDE_FBE_METADATA_DECRYPT := true
-TW_INCLUDE_OMAPI := true
+BOARD_USES_QCOM_FBE_DECRYPTION  := true
 
 # Debug
 TARGET_USES_LOGD := true

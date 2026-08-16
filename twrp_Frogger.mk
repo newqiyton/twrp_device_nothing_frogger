@@ -13,13 +13,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, vendor/twrp/config/common.mk)
 
 # Inherit from Frogger device
-$(call inherit-product, device/nothing/frogger/device.mk)
+$(call inherit-product, device/nothing/Frogger/device.mk)
 
 # Inherit from Frogger device
-$(call inherit-product, device/nothing/frogger/twrp_config.mk)
+$(call inherit-product, device/nothing/Frogger/twrp_config.mk)
 
-PRODUCT_DEVICE := frogger
-PRODUCT_NAME := twrp_frogger
+PRODUCT_DEVICE := Frogger
+PRODUCT_NAME := twrp_Frogger
 PRODUCT_BRAND := Nothing
 PRODUCT_MODEL := A069
 PRODUCT_MANUFACTURER := nothing

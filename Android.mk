@@ -26,6 +26,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),frogger)
+ifeq ($(TARGET_DEVICE),Asteroids)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 endif
