@@ -35,7 +35,7 @@ Manifest        | https://github.com/nebrassy/platform_manifest_twrp_aosp.git
 - [x] Installing and flashing images
     - [x] .zip files (experimental)
     - [x] .img files (working)
-- [?] Backup and restore
+- [x] Backup and restore
     - [?] To external/removable devices (e.g. OTG device)
 - [x] Built-in features work normally
     - [x] ADB
